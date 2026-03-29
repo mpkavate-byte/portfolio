@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manasi Kavate | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Global styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.7;
+      color: #333;
+      background-color: #fdf9f2; /* warm nude ba */
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    a {
+      text-decoration: none;
+      color: #5d4037;
+    }
+    a:hover {
+      color: #8d6e63;
+    }
+    section {
+      padding: 70px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #8d6e63; /* warm brown (nude family) */
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #6d4c41;
+    }
+
+    /* Header / Navbar */
+    header {
+      background: #faf3eb; /* light nude */
+      color: #5d4037;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid #e0d6c5;
+      z-index: 100;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #5d4037;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      color: #5d4037;
+      font-weight: 500;
+      position: relative;
+    }
+    nav a:hover::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #8d6e63;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero section */
+    #hero {
+      background: linear-gradient(135deg, #f5ebe1, #e3c2a5); /* nude gradient */
+      color: #333;
+      padding: 110px 20px;
+      text-align: center;
+    }
+    #hero h2 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+      color: #5d4037;
+    }
+    #hero p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #5d4037;
+    }
+
+    /* Headings across sections */
+    #about h2,
+    #education h2,
+    #skills h2,
+    #projects h2,
+    #achievements h2,
+    #goals h2,
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #5d4037;
+    }
+
+    #about p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+
+    /* Education & Goals list */
+    ul {
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .skill-tag {
+      padding: 9px 18px;
+      background: #faf3eb;
+      border: 1px solid #d7ccc8;
+      border-radius: 30px;
+      font-size: 0.95rem;
+    }
+
+    /* Projects placeholder */
+    #projects .card {
+      border: 1px solid #e0d6c5;
+      padding: 22px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      background: white;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+    #projects .card:hover {
+      transform: translateY(-3px);
+      border-color: #e3c2a5;
+    }
+
+    /* Contact */
+    #contact .links {
+      margin-top: 25px;
+    }
+    #contact .links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      padding: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #f5ebe1;
+      color: #5d4037;
+      text-align: center;
+      padding: 22px;
+      font-size: 0.95rem;
+      border-top: 1px solid #d7ccc8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      #hero h2 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container">
+      <a href="#hero"><h1>Manasi Kavate</h1></a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#goals">Goals</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section id="hero">
+    <div class="container">
+      <h2>Manasi Kavate</h2>
+      <p>
+        BTech Computer Science and Business Systems, 4th semester, VTU Belgavi.<br>
+        <br>
+        Aiming to build a career in the IT industry.
+      </p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am Manasi Kavate, a BTech student in Computer Science and Business Systems at VTU Belgavi,
+        currently in 4th semester.
+      </p>
+      <p>
+        I enjoy learning web technologies like HTML and CSS, programming in C, C++, Python, and Java,
+        and exploring core concepts like OOP, DSA, and DBMS and OS.
+      </p>
+      <p>
+        Outside academics, I like organising events and doing simple video editing.
+        I am preparing for building a strong foundation for a career in the IT field.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <p>
+        <strong>B.Tech in Computer Science and Business Systems (CSBS)</strong><br>
+        VTU Belgavi — 4th semester (Expected graduation: 2027)
+      </p>
+      <p>
+        <strong>Key subjects completed/completing :</strong><br>
+        Object‑Oriented Programming (OOP), Database Management Systems (DBMS basics),Operating System, Engineering Mathematics,DDCO, Analysis and Design of algorithm, Financial Management and related programming courses.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+<section id="skills">
+  <div class="container">
+
+    <h2>What I’m Learning</h2>
+    <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">
+      I’m currently learning web development, core programming languages, and focusing deeply on DSA and coding practice.
+    </p>
+
+    <!-- Language table with icons -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 10px;">
+      <div style="display: flex; flex-direction: column; align-items: center; background: #faf3eb; padding: 15px 12px; border-radius: 10px; border: 1px solid #d7ccc8; width: 90px; text-align: center; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" style="width: 40px; height: 40px; margin-bottom: 6px; filter: brightness(0.9);"/>
+        <span style="font-size: 0.9rem; font-weight: 500;">HTML</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; background: #faf3eb; padding: 15px 12px; border-radius: 10px; border: 1px solid #d7ccc8; width: 90px; text-align: center; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" style="width: 40px; height: 40px; margin-bottom: 6px; filter: brightness(0.9);"/>
+        <span style="font-size: 0.9rem; font-weight: 500;">CSS</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; background: #faf3eb; padding: 15px 12px; border-radius: 10px; border: 1px solid #d7ccc8; width: 90px; text-align: center; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" style="width: 40px; height: 40px; margin-bottom: 6px; filter: brightness(0.9);"/>
+        <span style="font-size: 0.9rem; font-weight: 500;">C</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; background: #faf3eb; padding: 15px 12px; border-radius: 10px; border: 1px solid #d7ccc8; width: 90px; text-align: center; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" style="width: 40px; height: 40px; margin-bottom: 6px; filter: brightness(0.9);"/>
+        <span style="font-size: 0.9rem; font-weight: 500;">C++</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; background: #faf3eb; padding: 15px 12px; border-radius: 10px; border: 1px solid #d7ccc8; width: 90px; text-align: center; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 40px; height: 40px; margin-bottom: 6px; filter: brightness(0.9);"/>
+        <span style="font-size: 0.9rem; font-weight: 500;">Python</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; background: #faf3eb; padding: 15px 12px; border-radius: 10px; border: 1px solid #d7ccc8; width: 90px; text-align: center; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="width: 40px; height: 40px; margin-bottom: 6px; filter: brightness(0.9);"/>
+        <span style="font-size: 0.9rem; font-weight: 500;">Java</span>
+      </div>
+    </div>
+
+    <!-- DSA / focus card (optional but strong) -->
+    <div style="margin-top: 30px; padding: 20px; background: #f5ebe1; border-radius: 10px; border: 1px solid #e3c2a5; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+      <h3 style="font-size: 1.3rem; color: #5d4037;">DSA & Coding Practice</h3>
+      <p style="font-size: 1.05rem; color: #4e4e4e;">
+        Along with learning these languages, I’m giving extra focus to Data Structures & Algorithms (DSA)
+        and practicing coding problems to prepare for placements and competitive exams.
+      </p>
+    </div>
+
+	 <!-- MERN Stack Developer / focus card (optional but strong) -->
+    <div style="margin-top: 30px; padding: 20px; background: #f5ebe1; border-radius: 10px; border: 1px solid #e3c2a5; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+      <h3 style="font-size: 1.3rem; color: #5d4037;">MERN Stack Development</h3>
+      <p style="font-size: 1.05rem; color: #4e4e4e;">
+        Along with learning these languages, I’m learning full stack development using MERN
+        and practicing small projects.
+      </p>
+    </div>
+
+    <!-- Soft & creative skills (keep your existing style) -->
+    <h3 style="margin-top: 30px; text-align: center;">Soft & Creative Skills</h3>
+    <div class="skills-list" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 10px;">
+      <span class="skill-tag" style="padding: 9px 18px; background: #faf3eb; border: 1px solid #d7ccc8; border-radius: 30px; font-size: 0.95rem;">Communication</span>
+      <span class="skill-tag" style="padding: 9px 18px; background: #faf3eb; border: 1px solid #d7ccc8; border-radius: 30px; font-size: 0.95rem;">Teamwork</span>
+      <span class="skill-tag" style="padding: 9px 18px; background: #faf3eb; border: 1px solid #d7ccc8; border-radius: 30px; font-size: 0.95rem;">Problem‑solving</span>
+      <span class="skill-tag" style="padding: 9px 18px; background: #faf3eb; border: 1px solid #d7ccc8; border-radius: 30px; font-size: 0.95rem;">Motivational talks</span>
+      <span class="skill-tag" style="padding: 9px 18px; background: #faf3eb; border: 1px solid #d7ccc8; border-radius: 30px; font-size: 0.95rem;">Video editing</span>
+    </div>
+
+  </div>
+</section>
+  <!-- Projects (placeholder) -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <p>
+        I am currently working on building my first projects. I will soon add:
+      </p>
+
+      <div class="card">
+        <h3>First Web Project (coming soon)</h3>
+        <p>
+          A simple static website using HTML and CSS to practice layout, responsiveness, and
+          styling concepts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Programming Practice Projects (coming soon)</h3>
+        <p>
+          Small C/C++ or Python programs to strengthen DSA and OOP concepts, hosted on GitHub.
+        </p>
+      </div>
+
+      <p>
+        As you complete projects, you can replace these placeholders with real project cards,
+        adding GitHub links and brief descriptions.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Future Goals -->
+  <section id="goals">
+    <div class="container">
+      <h2>Future Goals</h2>
+
+      <h3>Short‑term goals</h3>
+      <ul>
+        <li>Secure an internship in the IT field.</li>
+        <li>Build 2–3 strong projects in web development and programming.</li>
+        <li>Improve coding skills through consistent practice and competitive‑exam preparation.</li>
+      </ul>
+
+      <h3>Long‑term vision</h3>
+      <ul>
+        <li>Work as a software developer in the IT industry.</li>
+        <li>Keep upgrading knowledge in web technologies, OOP, and data structures.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>
+        If you want to connect or share an opportunity, feel free to reach out.
+      </p>
+
+      <div class="links">
+        <a href="mailto:mpkavat@gmail.com" target="_blank">
+          ✉️ Email: mpkavate@gmail.com
+        </a>
+        <a href="https://github.com/mpkavate-byte" target="_blank">
+          🌐 GitHub: github.com/mpkavate-byte
+        </a>
+        <a href="https://www.linkedin.com/in/manasi-kavate-0424aa358" target="_blank">
+          🔗 LinkedIn: linkedin.com/in/manasi-kavate-0424aa358
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      Portfolio built by Manasi Kavate | VTU Belgavi | Aim: IT Field
+    </div>
+  </footer>
+
+</body>
+</html>
